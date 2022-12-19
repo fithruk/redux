@@ -6,6 +6,5 @@ store.dispatch(addUser({ id: 77, name: "Vasya" }));
 store.dispatch(deleteUser(77));
 
 store.subscribe(() => {
-  const state = store.getState();
-  console.log(state);
+  console.log("jopa");
 });

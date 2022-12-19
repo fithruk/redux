@@ -1,4 +1,4 @@
-const userReducer = (state = { userList: [] }, action) => {
+const usersReducer = (state = { userList: [] }, action) => {
   switch (action.type) {
     case "ADD_USER":
       return {
@@ -16,4 +16,4 @@ const userReducer = (state = { userList: [] }, action) => {
   }
 };
 
-export { userReducer };
+export { usersReducer };
