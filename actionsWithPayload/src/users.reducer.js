@@ -1,14 +1,14 @@
-const usersReducer = (state = { userList: [] }, action) => {
+const usersReducer = (state = { usersList: [] }, action) => {
   switch (action.type) {
     case "ADD_USER":
       return {
         ...state,
-        userList: state.userList.concat(action.payload),
+        userList: state.usersList.concat(action.payload),
       };
     case "DELETE_USER":
       return {
         ...state,
-        userList: state.userList.filter((user) => user.id !== action.payload),
+        userList: state.usersList.filter((user) => user.id !== action.payload),
       };
 
     default:
