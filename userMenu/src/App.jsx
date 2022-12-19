@@ -7,13 +7,15 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name: "Nikola Tesla",
-      avatar_url: "https://avatars3.githubusercontent.com/u10001",
+      userData: {
+        name: "Nikola Tesla",
+        avatar_url: "https://avatars3.githubusercontent.com/u10001",
+      },
     };
   }
   render() {
     return (
-      <userContext.Provider value={this.state}>
+      <userContext.Provider value={this.state.userData}>
         <div className="page">
           <Header />
         </div>
