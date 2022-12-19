@@ -1,20 +1,25 @@
-import React, { useState } from "react";
+import React, { Component } from "react";
 import Header from "./Header";
 
 import { userContext } from "./context";
 
-const App = () => {
-  const [user, setUser] = useState({
-    name: "Nikola Tesla",
-    avatar_url: "https://avatars3.githubusercontent.com/u10001",
-  });
-  return (
-    <userContext.Provider value={user}>
-      <div className="page">
-        <Header />
-      </div>
-    </userContext.Provider>
-  );
-};
+class App extends Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      name: "Nikola Tesla",
+      avatar_url: "https://avatars3.githubusercontent.com/u10001",
+    };
+  }
+  render() {
+    return (
+      <userContext.Provider value={this.state}>
+        <div className="page">
+          <Header />
+        </div>
+      </userContext.Provider>
+    );
+  }
+}
 
 export default App;
