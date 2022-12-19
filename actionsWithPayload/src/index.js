@@ -1,8 +1,9 @@
 import store from "./store";
-import { addNewUser, removeUserById } from "./users.actions";
+import { addUser, deleteUser } from "./users.actions";
 
-store.dispatch(addNewUser({ id: 76, name: "Sarah" }));
-store.dispatch(addNewUser({ id: 77, name: "Vasya" }));
+store.dispatch(addUser({ id: 76, name: "Sarah" }));
+store.dispatch(addUser({ id: 77, name: "Vasya" }));
+store.dispatch(deleteUser(77));
 
 store.subscribe(() => {
   const state = store.getState();

@@ -5,7 +5,7 @@ const userReducer = (state = { userList: [] }, action) => {
         ...state,
         userList: state.userList.concat(action.payload),
       };
-    case "REMOVE_USER":
+    case "DELETE_USER":
       return {
         ...state,
         userList: state.userList.filter((user) => user.id !== action.payload),

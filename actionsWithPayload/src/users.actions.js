@@ -1,15 +1,15 @@
-const addNewUser = (payload) => {
+const addUser = (payload) => {
   return {
     type: "ADD_USER",
     payload,
   };
 };
 
-const removeUserById = (id) => {
+const deleteUser = (id) => {
   return {
-    type: "REMOVE_USER",
+    type: "DELETE_USER",
     payload: id,
   };
 };
 
-export { addNewUser, removeUserById };
+export { addUser, deleteUser };
