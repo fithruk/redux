@@ -27,4 +27,4 @@ const counterReducer = (state = 0, action) => {
 
 const store = createStore(counterReducer);
 
-export { DECREMENT, INCREMENT, store };
+export { increment, decrement, store };
