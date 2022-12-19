@@ -3,7 +3,7 @@ import { addUser, deleteUser } from "./users.actions";
 
 store.dispatch(addUser({ id: 76, name: "Sarah" }));
 store.dispatch(addUser({ id: 77, name: "Vasya" }));
-store.dispatch(deleteUser(77));
+store.dispatch(deleteUser(76));
 
 store.subscribe(() => {
   console.log(store.getState());
