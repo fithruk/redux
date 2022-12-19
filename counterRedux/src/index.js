@@ -1,30 +1,32 @@
-import { createStore } from "redux";
+import { increment, decrement, reset, store } from "./store";
+import "./index.scss";
 
-const INCREMENT = "COUNTER/INCREMENT";
-const DECREMENT = "COUNTER/DECREMENT";
+const resultEl = document.querySelector(".counter__result");
+const incBtn = document.querySelector('[data-action="increment"]');
+const decBtn = document.querySelector('[data-action="decrement"]');
+const resetBtn = document.querySelector('[data-action="reset"]');
 
-const increment = () => {
-  return {
-    type: INCREMENT,
-  };
-};
-const decrement = () => {
-  return {
-    type: DECREMENT,
-  };
+const onInc = () => {
+  store.dispatch(increment());
 };
 
-const counterReducer = (state = 0, action) => {
-  switch (action.type) {
-    case INCREMENT:
-      return state + 1;
-    case DECREMENT:
-      return state - 1;
-    default:
-      return state;
-  }
+const onDec = () => {
+  store.dispatch(decrement());
 };
 
-const store = createStore(counterReducer);
+const onRes = () => {
+  store.dispatch(reset());
+};
 
-export { increment, decrement, store };
+incBtn.addEventListener("click", onInc);
+decBtn.addEventListener("click", onDec);
+resetBtn.addEventListener("click", onRes);
+
+store.subscribe(() => {
+  const state = store.getState();
+  console.log(state);
+  const currentValue = state.history.reduce((acc, next) => acc + +next, 0);
+  const historyString = state.history.join("");
+  resultEl.textContent =
+    historyString.length === 0 ? "" : `${historyString} = ${currentValue}`;
+});
