@@ -1,11 +1,11 @@
 const initialState = { products: [] };
 
 const cartReducer = (state = initialState, action) => {
-  switch (action.value) {
+  switch (action.type) {
     case "ADD_PRODUCT":
       return {
         ...state,
-        cart: state.products.concat(action.payload),
+        products: state.products.concat(action.payload),
       };
     case "REMOVE_PRODUCT":
       return {
