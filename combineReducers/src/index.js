@@ -20,6 +20,7 @@ const onDec = () => {
 
 const onRes = () => {
   store.dispatch(reset());
+  store.dispatch(updateUser(76, { name: "Vasya" }));
 };
 
 incBtn.addEventListener("click", onInc);

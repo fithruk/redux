@@ -4,8 +4,8 @@ import { usersReducer } from "./users.reducer";
 import { counterReducer } from "./counter.reducer";
 
 const mainReducer = combineReducers({
-  users: usersReducer,
   counter: counterReducer,
+  users: usersReducer,
 });
 
 const store = createStore(mainReducer);
