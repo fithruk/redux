@@ -1,11 +1,11 @@
 const initialState = { user: null };
 
-const userReducer = (state = initialState, action) => {
+const userReducer = (state = null, action) => {
   switch (action.value) {
     case "SET_USER":
       return {
         ...state,
-        user: state.user.concat(action.payload),
+        user: action.payload,
       };
     case "REMOVE_USER":
       return {

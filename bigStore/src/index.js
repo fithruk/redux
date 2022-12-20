@@ -6,6 +6,5 @@ import { setUser, removeUser } from "./user.actions";
 store.dispatch(setUser({ name: "Bob" }));
 store.dispatch(addProduct({ id: 76, name: "milk" }));
 
-store.subscribe(() => {
-  console.log(store.getState());
-});
+store.subscribe(() => {});
+console.log(store.getState());
