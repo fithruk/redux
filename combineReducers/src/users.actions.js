@@ -1,19 +1,19 @@
 const addUser = (payload) => {
   return {
-    type: "ADD_USER",
+    type: "ADD/USER",
     payload,
   };
 };
 
 const deleteUser = (id) => {
   return {
-    type: "DELETE_USER",
+    type: "DELETE/USER",
     payload: id,
   };
 };
 const updateUser = (id, userData) => {
   return {
-    type: "UPDATE_USER",
+    type: "UPDATE/USER",
     payload: {
       id,
       userData,

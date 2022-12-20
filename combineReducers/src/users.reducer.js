@@ -1,17 +1,17 @@
 const usersReducer = (state = { usersList: [] }, action) => {
   switch (action.type) {
-    case "ADD_USER":
+    case "ADD/USER":
       return {
         ...state,
         usersList: state.usersList.concat(action.payload),
       };
-    case "DELETE_USER":
+    case "DELETE/USER":
       return {
         ...state,
         usersList: state.usersList.filter((user) => user.id !== action.payload),
       };
 
-    case "UPDATE_USER":
+    case "UPDATE/USER":
       return {
         ...state,
         usersList: state.usersList.map((user) => {
