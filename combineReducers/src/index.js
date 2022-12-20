@@ -30,4 +30,5 @@ resetBtn.addEventListener("click", onRes);
 store.subscribe(() => {
   console.log(store.getState());
   const { counter } = store.getState();
+  resultEl.textContent = counter;
 });
