@@ -23,6 +23,7 @@ const usersReducer = (state = { usersList: [] }, action) => {
               ...action.payload.userData,
             };
           }
+          return user;
         }),
       };
     default:

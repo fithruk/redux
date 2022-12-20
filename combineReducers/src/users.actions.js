@@ -15,6 +15,7 @@ const deleteUser = (id) => {
     payload: id,
   };
 };
+
 const updateUser = (id, userData) => {
   return {
     type: UPDATE_USER,
